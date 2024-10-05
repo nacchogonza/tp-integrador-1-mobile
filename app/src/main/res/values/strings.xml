@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TP Grupal Integrador</string>
+    <string name="bajada_comparador">A continuación deberá ingresar los datos solicitados para cada una las Inversiones con los cuales se realizará la comparación entre inversiones</string>
+</resources>
