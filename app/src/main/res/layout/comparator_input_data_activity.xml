@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ComparatorInputDataActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -51,7 +51,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Monto Inversion 1"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:text="1000"/>
 
             <EditText
                 android:id="@+id/tna_inversion1"
@@ -59,7 +60,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="TNA Inversión 1"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="43"/>
 
             <EditText
                 android:id="@+id/plazo_inversion1"
@@ -67,7 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="Plazo Inversión 1 (en días)"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:text="42"/>
 
             <EditText
                 android:id="@+id/entidad_inversion1"
@@ -75,7 +78,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="Entidad Inversión 1"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="Entidad 1"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -101,7 +105,8 @@
                     android:id="@+id/rb_tipo_inversion1_opcion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fondo Común de Inversión" />
+                    android:text="Fondo Común de Inversión"
+                    android:checked="true"/>
             </RadioGroup>
 
             <TextView
@@ -118,7 +123,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Monto Inversion 2"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:text="2000"/>
 
             <EditText
                 android:id="@+id/tna_inversion2"
@@ -126,7 +132,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="TNA Inversión 2"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="45"/>
 
             <EditText
                 android:id="@+id/plazo_inversion2"
@@ -134,7 +141,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="Plazo Inversión 2 (en días)"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:text="42"/>
 
             <EditText
                 android:id="@+id/entidad_inversion2"
@@ -142,7 +150,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="Entidad Inversión 2"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="Entidad 2"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -162,7 +171,8 @@
                     android:id="@+id/rb_tipo_inversion2_opcion1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Plazo Fijo" />
+                    android:text="Plazo Fijo"
+                    android:checked="true"/>
 
                 <RadioButton
                     android:id="@+id/rb_tipo_inversion2_opcion2"
@@ -184,6 +194,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Limpiar Campos" />
+
+            <Button
+                android:id="@+id/navegar_a_historial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="ver historial" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

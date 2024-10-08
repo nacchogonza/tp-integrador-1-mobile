@@ -1,21 +1,22 @@
 package com.example.tp_integrador
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class ComparatorInputDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.comparator_input_data_activity)
 
 
         val botonEnviar = findViewById<Button>(R.id.comparar_inversiones)
+        val botonHistorial = findViewById<Button>(R.id.navegar_a_historial)
 
         val editTextMontoInversion1 = findViewById<EditText>(R.id.monto_inversion1)
         val editTextTNAInversion1 = findViewById<EditText>(R.id.tna_inversion1)
@@ -34,20 +35,20 @@ class MainActivity : AppCompatActivity() {
             val tnaInversion1 = editTextTNAInversion1.text.toString()
             val plazoInversion1 = editTextPlazoInversion1.text.toString()
             val entidadInversion1 = editTextEntidadInversion1.text.toString()
-            val tipoInversion1 = radioGroupTipoInversion1.checkedRadioButtonId
+            val radioButtonGroupTipoInversion1 = radioGroupTipoInversion1.checkedRadioButtonId
 
             val montoInversion2 = editTextMontoInversion2.text.toString()
             val tnaInversion2 = editTextTNAInversion2.text.toString()
             val plazoInversion2 = editTextPlazoInversion2.text.toString()
             val entidadInversion2 = editTextEntidadInversion2.text.toString()
-            val tipoInversion2 = radioGroupTipoInversion2.checkedRadioButtonId
+            val radioButtonGroupTipoInversion2 = radioGroupTipoInversion2.checkedRadioButtonId
 
             if (inversionHaveEmptyFields(
                     montoInversion1,
                     tnaInversion1,
                     plazoInversion1,
                     entidadInversion1,
-                    tipoInversion1
+                    radioButtonGroupTipoInversion1
                 )
             ) {
                 Toast.makeText(
@@ -55,7 +56,14 @@ class MainActivity : AppCompatActivity() {
                     "Faltan completar o seleccionar campos de la Inversion 1",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else if (inversionHaveEmptyFields(montoInversion2, tnaInversion2, plazoInversion2, entidadInversion2, tipoInversion2)) {
+            } else if (inversionHaveEmptyFields(
+                    montoInversion2,
+                    tnaInversion2,
+                    plazoInversion2,
+                    entidadInversion2,
+                    radioButtonGroupTipoInversion2
+                )
+            ) {
                 Toast.makeText(
                     this,
                     "Faltan completar o seleccionar campos de la Inversion 2",
@@ -108,6 +116,14 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                 } else {
 
+                    val radioButtonSeleccionadoTipoInversion1 =
+                        findViewById<RadioButton>(radioButtonGroupTipoInversion1)
+                    val radioButtonSeleccionadoTipoInversion2 =
+                        findViewById<RadioButton>(radioButtonGroupTipoInversion2)
+
+                    val tipoInversion1 = radioButtonSeleccionadoTipoInversion1.text
+                    val tipoInversion2 = radioButtonSeleccionadoTipoInversion2.text
+
 
                     navigateToComparator(
                         montoInversion1,
@@ -123,6 +139,9 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
             }
+        }
+        botonHistorial.setOnClickListener {
+            navigateToHistory()
         }
     }
 
@@ -156,7 +175,7 @@ class MainActivity : AppCompatActivity() {
         entidadInversion2: String,
         tipoInversion2: String
     ) {
-        val intent = Intent(this, SecondActivity::class.java).apply {
+        val intent = Intent(this, ComparatorCalcActivity::class.java).apply {
             putExtra("monto_inversion_1", montoInversion1)
             putExtra("tna_inversion_1", tnaInversion1)
             putExtra("plazo_inversion_1", plazoInversion1)
@@ -169,6 +188,12 @@ class MainActivity : AppCompatActivity() {
             putExtra("entidad_inversion_2", entidadInversion2)
             putExtra("tipo_inversion_2", tipoInversion2)
         }
+        startActivity(intent)
+        finish()
+    }
+
+    private fun navigateToHistory() {
+        val intent = Intent(this, HistoryActivity::class.java).apply {}
         startActivity(intent)
         finish()
     }
