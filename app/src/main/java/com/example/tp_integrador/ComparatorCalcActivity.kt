@@ -129,6 +129,10 @@ class ComparatorCalcActivity : AppCompatActivity() {
         var entidadesInversiones2 = historyStorage.getString("entidadesInversiones2", "")
         var tiposInversiones1 = historyStorage.getString("tiposInversiones1", "")
         var tiposInversiones2 = historyStorage.getString("tiposInversiones2", "")
+        var montosInicialesInversiones1 = historyStorage.getString("montosInicialesInversiones1", "")
+        var montosInicialesInversiones2 = historyStorage.getString("montosInicialesInversiones2", "")
+        var montosFinalesInversiones1 = historyStorage.getString("montosFinalesInversiones1", "")
+        var montosFinalesInversiones2 = historyStorage.getString("montosFinalesInversiones2", "")
         var rendimientosPorcentualesInversiones1 =
             historyStorage.getString("rendimientosPorcentualesInversiones1", "")
         var rendimientosPorcentualesInversiones2 =
@@ -143,6 +147,10 @@ class ComparatorCalcActivity : AppCompatActivity() {
             entidadesInversiones2 = "$entidadInversion2"
             tiposInversiones1 = tipoInversion1
             tiposInversiones2 = tipoInversion2
+            montosInicialesInversiones1 = "$montoInversion1"
+            montosInicialesInversiones2 = "$montoInversion2"
+            montosFinalesInversiones1 = "$valorFinalInversion1"
+            montosFinalesInversiones2 = "$valorFinalInversion2"
             rendimientosPorcentualesInversiones1 = rendimientoPorcentualInversion1.toString()
             rendimientosPorcentualesInversiones2 = rendimientoPorcentualInversion2.toString()
             cantidadComparaciones++
@@ -152,6 +160,10 @@ class ComparatorCalcActivity : AppCompatActivity() {
             entidadesInversiones2 = "$entidadInversion2;$entidadesInversiones2"
             tiposInversiones1 = tipoInversion1 + ";" + tiposInversiones1
             tiposInversiones2 = tipoInversion2 + ";" + tiposInversiones2
+            montosInicialesInversiones1 = "$montoInversion1;$montosInicialesInversiones1"
+            montosInicialesInversiones2 = "$montoInversion2;$montosInicialesInversiones2"
+            montosFinalesInversiones1 = "$valorFinalInversion1;$montosFinalesInversiones1"
+            montosFinalesInversiones2 = "$valorFinalInversion2;$montosFinalesInversiones2"
             rendimientosPorcentualesInversiones1 =
                 "$rendimientoPorcentualInversion1;$rendimientosPorcentualesInversiones1"
             rendimientosPorcentualesInversiones2 =
@@ -169,6 +181,14 @@ class ComparatorCalcActivity : AppCompatActivity() {
                 tiposInversiones1!!.split(";").toMutableList()
             val listaTiposInversion2: MutableList<String> =
                 tiposInversiones2!!.split(";").toMutableList()
+            val listaMontosInicialesInversiones1: MutableList<String> =
+                montosInicialesInversiones1!!.split(";").toMutableList()
+            val listaMontosInicialesInversiones2: MutableList<String> =
+                montosInicialesInversiones2!!.split(";").toMutableList()
+            val listaMontosFinalesInversiones1: MutableList<String> =
+                montosFinalesInversiones1!!.split(";").toMutableList()
+            val listaMontosFinalesInversiones2: MutableList<String> =
+                montosFinalesInversiones2!!.split(";").toMutableList()
             val listaRendimientosPorcentualesInversiones1: MutableList<String> =
                 rendimientosPorcentualesInversiones1!!.split(";").toMutableList()
             val listaRendimientosPorcentualesInversiones2: MutableList<String> =
@@ -178,6 +198,10 @@ class ComparatorCalcActivity : AppCompatActivity() {
             listaEntidadesInversiones2.removeLast()
             listaTiposInversion1.removeLast()
             listaTiposInversion2.removeLast()
+            listaMontosInicialesInversiones1.removeLast()
+            listaMontosInicialesInversiones2.removeLast()
+            listaMontosFinalesInversiones1.removeLast()
+            listaMontosFinalesInversiones2.removeLast()
             listaRendimientosPorcentualesInversiones1.removeLast()
             listaRendimientosPorcentualesInversiones2.removeLast()
 
@@ -185,6 +209,10 @@ class ComparatorCalcActivity : AppCompatActivity() {
             listaEntidadesInversiones2.add(0, entidadInversion2!!)
             listaTiposInversion1.add(0, tipoInversion1)
             listaTiposInversion2.add(0, tipoInversion2)
+            listaMontosInicialesInversiones1.add(0, montoInversion1.toString())
+            listaMontosInicialesInversiones2.add(0, montoInversion2.toString())
+            listaMontosFinalesInversiones1.add(0, valorFinalInversion1.toString())
+            listaMontosFinalesInversiones2.add(0, valorFinalInversion2.toString())
             listaRendimientosPorcentualesInversiones1.add(
                 0,
                 rendimientoPorcentualInversion1.toString()
@@ -199,6 +227,10 @@ class ComparatorCalcActivity : AppCompatActivity() {
             entidadesInversiones2 = ""
             tiposInversiones1 = ""
             tiposInversiones2 = ""
+            montosInicialesInversiones1 = ""
+            montosInicialesInversiones2 = ""
+            montosFinalesInversiones1 = ""
+            montosFinalesInversiones2 = ""
             rendimientosPorcentualesInversiones1 = ""
             rendimientosPorcentualesInversiones2 = ""
             for (i in 0 until cantidadComparaciones) {
@@ -209,6 +241,14 @@ class ComparatorCalcActivity : AppCompatActivity() {
                         entidadesInversiones2 + listaEntidadesInversiones2[i] + ";"
                     tiposInversiones1 = tiposInversiones1 + listaTiposInversion1[i] + ";"
                     tiposInversiones2 = tiposInversiones2 + listaTiposInversion2[i] + ";"
+                    montosInicialesInversiones1 =
+                        montosInicialesInversiones1 + listaMontosInicialesInversiones1[i] + ";"
+                    montosInicialesInversiones2 =
+                        montosInicialesInversiones2 + listaMontosInicialesInversiones2[i] + ";"
+                    montosFinalesInversiones1 =
+                        montosFinalesInversiones1 + listaMontosFinalesInversiones1[i] + ";"
+                    montosFinalesInversiones2 =
+                        montosFinalesInversiones2 + listaMontosFinalesInversiones2[i] + ";"
                     rendimientosPorcentualesInversiones1 =
                         rendimientosPorcentualesInversiones1 + listaRendimientosPorcentualesInversiones1[i] + ";"
                     rendimientosPorcentualesInversiones2 =
@@ -220,6 +260,12 @@ class ComparatorCalcActivity : AppCompatActivity() {
 
                     tiposInversiones1 += listaTiposInversion1[i]
                     tiposInversiones2 += listaTiposInversion2[i]
+
+                    montosInicialesInversiones1 += listaMontosInicialesInversiones1[i]
+                    montosInicialesInversiones2 += listaMontosInicialesInversiones2[i]
+
+                    montosFinalesInversiones1 += listaMontosFinalesInversiones1[i]
+                    montosFinalesInversiones2 += listaMontosFinalesInversiones2[i]
 
                     rendimientosPorcentualesInversiones1 += listaRendimientosPorcentualesInversiones1[i]
                     rendimientosPorcentualesInversiones2 += listaRendimientosPorcentualesInversiones2[i]
@@ -237,6 +283,10 @@ class ComparatorCalcActivity : AppCompatActivity() {
             putString("entidadesInversiones2", entidadesInversiones2)
             putString("tiposInversiones1", tiposInversiones1)
             putString("tiposInversiones2", tiposInversiones2)
+            putString("montosInicialesInversiones1", montosInicialesInversiones1)
+            putString("montosInicialesInversiones2", montosInicialesInversiones2)
+            putString("montosFinalesInversiones1", montosFinalesInversiones1)
+            putString("montosFinalesInversiones2", montosFinalesInversiones2)
             putString("rendimientosPorcentualesInversiones1", rendimientosPorcentualesInversiones1)
             putString("rendimientosPorcentualesInversiones2", rendimientosPorcentualesInversiones2)
             apply()
@@ -279,7 +329,10 @@ class ComparatorCalcActivity : AppCompatActivity() {
     }
 
     private fun navigateToHome() {
-        val intent = Intent(this, ComparatorInputDataActivity::class.java).apply {}
+        val intent = Intent(this, WelcomeActivity::class.java).apply {}
+        val datosInversor = getSharedPreferences("Inversiones", Context.MODE_PRIVATE)
+        val mensaje = datosInversor.getString("mensaje", "")
+        intent.putExtra("mensaje", mensaje)
         startActivity(intent)
         finish()
     }

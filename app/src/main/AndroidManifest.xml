@@ -13,6 +13,17 @@
         android:theme="@style/Theme.TP_Integrador"
         tools:targetApi="31">
         <activity
+            android:name=".TestInversor"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".WelcomeActivity"></activity>
+        <activity android:name=".TermYCond"></activity>
+        <activity
             android:name=".ComparatorInputDataActivity"
             android:exported="true">
             <intent-filter>

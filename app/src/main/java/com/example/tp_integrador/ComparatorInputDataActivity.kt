@@ -14,9 +14,7 @@ class ComparatorInputDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.comparator_input_data_activity)
 
-
         val botonEnviar = findViewById<Button>(R.id.comparar_inversiones)
-        val botonHistorial = findViewById<Button>(R.id.navegar_a_historial)
 
         val editTextMontoInversion1 = findViewById<EditText>(R.id.monto_inversion1)
         val editTextTNAInversion1 = findViewById<EditText>(R.id.tna_inversion1)
@@ -139,9 +137,6 @@ class ComparatorInputDataActivity : AppCompatActivity() {
                     )
                 }
             }
-        }
-        botonHistorial.setOnClickListener {
-            navigateToHistory()
         }
     }
 

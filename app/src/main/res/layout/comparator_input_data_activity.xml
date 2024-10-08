@@ -19,6 +19,14 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <ImageView
+                android:id="@+id/mi_imagen"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"
+                android:layout_gravity="center"
+                android:background="#ff5757"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +60,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Monto Inversion 1"
                 android:inputType="numberDecimal"
-                android:text="1000"/>
+                android:textColorHint="#ff5757"
+                android:text=""/>
 
             <EditText
                 android:id="@+id/tna_inversion1"
@@ -61,7 +70,8 @@
                 android:layout_marginTop="16dp"
                 android:hint="TNA Inversión 1"
                 android:inputType="number"
-                android:text="43"/>
+                android:textColorHint="#ff5757"
+                android:text=""/>
 
             <EditText
                 android:id="@+id/plazo_inversion1"
@@ -70,7 +80,8 @@
                 android:layout_marginTop="16dp"
                 android:hint="Plazo Inversión 1 (en días)"
                 android:inputType="numberDecimal"
-                android:text="42"/>
+                android:textColorHint="#ff5757"
+                android:text=""/>
 
             <EditText
                 android:id="@+id/entidad_inversion1"
@@ -79,7 +90,8 @@
                 android:layout_marginTop="16dp"
                 android:hint="Entidad Inversión 1"
                 android:inputType="text"
-                android:text="Entidad 1"/>
+                android:textColorHint="#ff5757"
+                android:text=""/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -105,8 +117,7 @@
                     android:id="@+id/rb_tipo_inversion1_opcion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fondo Común de Inversión"
-                    android:checked="true"/>
+                    android:text="Fondo Común de Inversión" />
             </RadioGroup>
 
             <TextView
@@ -124,7 +135,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Monto Inversion 2"
                 android:inputType="numberDecimal"
-                android:text="2000"/>
+                android:textColorHint="#ff5757"
+                android:text=""/>
 
             <EditText
                 android:id="@+id/tna_inversion2"
@@ -133,7 +145,8 @@
                 android:layout_marginTop="16dp"
                 android:hint="TNA Inversión 2"
                 android:inputType="number"
-                android:text="45"/>
+                android:textColorHint="#ff5757"
+                android:text=""/>
 
             <EditText
                 android:id="@+id/plazo_inversion2"
@@ -142,7 +155,8 @@
                 android:layout_marginTop="16dp"
                 android:hint="Plazo Inversión 2 (en días)"
                 android:inputType="numberDecimal"
-                android:text="42"/>
+                android:textColorHint="#ff5757"
+                android:text=""/>
 
             <EditText
                 android:id="@+id/entidad_inversion2"
@@ -151,7 +165,8 @@
                 android:layout_marginTop="16dp"
                 android:hint="Entidad Inversión 2"
                 android:inputType="text"
-                android:text="Entidad 2"/>
+                android:textColorHint="#ff5757"
+                android:text=""/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -171,8 +186,7 @@
                     android:id="@+id/rb_tipo_inversion2_opcion1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Plazo Fijo"
-                    android:checked="true"/>
+                    android:text="Plazo Fijo" />
 
                 <RadioButton
                     android:id="@+id/rb_tipo_inversion2_opcion2"
@@ -186,21 +200,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:textColor="@color/white"
+                android:backgroundTint="#ff5757"
                 android:text="Comparar Inversiones" />
 
-            <Button
-                android:id="@+id/limpiar_campos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Limpiar Campos" />
-
-            <Button
-                android:id="@+id/navegar_a_historial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="ver historial" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
